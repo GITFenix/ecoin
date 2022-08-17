@@ -1,0 +1,1 @@
+FROM ecoin-base as ecoin-dev
