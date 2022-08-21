@@ -70,6 +70,7 @@
     "require-dev": {
         "behat/behat": "^3.11",
         "phpspec/phpspec": "^7.2",
-        "phpunit/phpunit": "^9.5"
+        "phpunit/phpunit": "^9.5",
+        "symfony/phpunit-bridge": "^6.1"
     }
 }
