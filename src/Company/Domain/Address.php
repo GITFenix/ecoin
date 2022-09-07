@@ -14,6 +14,22 @@ class Address implements JsonSerializable
         private readonly string $city
     ) { }
 
+    public static function fromArray(array $address): self
+    {
+        self::isValid($address);
+
+        return new self($address['street'], $address['postalCode'], $address['city']);
+    }
+
+    private static function isValid(array $address): void
+    {
+        $validKeys = array_flip(['street', 'postalCode', 'city']);
+
+        if (array_diff_key($validKeys, $address)) {
+            throw new \InvalidArgumentException();
+        }
+    }
+
     /**
      * @return array{
      *     street:string,
